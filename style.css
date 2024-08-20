@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    
+}
+body {
+	background: linear-gradient(-45deg, #51d0ff, #e73c7e, #23a6d5, #25bb63);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.navbar {
+    height: 100px;
+    background-color: rgb(31, 45, 85); 
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 20px; 
+}
+
+.navbar h1 {
+    font-size: 2rem;
+    color: white;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin-left: 20px; 
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    transition: color 0.3s; 
+}
+
+.navbar ul li a:hover {
+    color: blue;
+
+}
+.hero {
+    background-color: rgb(240, 239, 240);
+    margin: 100px 200px; 
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0; 
+    height: 400px;
+   
+}
+
+.hero h2 {
+    font-size: 5em;
+    margin: 50px 0 20px;
+    height: 100px;
+}
+
+.hero p {
+    font-size: 2rem;
+    margin: 50px 0 20px; 
+    height: 130px;
+}
+
+.hero a {
+    text-decoration: none;
+    background-color: rgb(28, 78, 216); 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero a:hover {
+    background-color: #333333; 
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgb(31, 45, 85); 
+    color: white;
+}
+footer a {
+    color: white;
+    padding: 0.5px;
+    text-decoration: none;
+
+}
+footer a:hover {
+    color: blue; 
+}
+.foot-panel2{
+    background-color: #222f3d;
+    color:white;
+    height: 150px;
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+ul{
+    margin-top: 20px;
+
+    text-decoration: none;
+    height: 20px;
+}
+ul div{
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+ul h5{
+    margin-bottom: 10px;
+    font-size:22px;
+}
+ul a{
+    display: inline;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #dddddd;
+
+    text-decoration: none;
+    height: 20px;
+}

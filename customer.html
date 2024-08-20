@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers</title>
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="customer.css">
+</head>
+
+<body>
+    <!-- navbar starts here -->
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#"><img src=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"="true"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <!-- navbar ends here -->
+    <section id="main" class="coloured-section">
+        <hr>
+        <br>
+        <hr>
+        <div class="my-info text-center">
+            <button class="btn btn-info" data-toggle="modal" data-target="#sendMoney">Send Money</button>
+            <button class="btn btn-info" data-toggle="modal" data-target="#transactionHistory">See All Transactions</button>
+        </div>
+
+        <!-- send money -->
+        <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="input-group mb-3">
+                                <input type="text" id="enterSName" class="form-control" placeholder="Sender's username" aria-label="Sender's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">@email.com</span>
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="text" id="enterName" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">@email.com</span>
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Rs</span>
+                                </div>
+                                <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount" aria-label="Amount">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" onclick="sendMoney()" class="btn btn-success" data-dismiss="modal">Send Money</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--transaction History -->
+        <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol id="transaction-history-body">
+                            <!-- Transactions will be displayed here -->
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- table -->
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered table-danger">
+                    <thead>
+                        <tr class="table-info">
+                            <th scope="col">SR. No.</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">E-mail ID</th>
+                            <th scope="col">Bank Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-light">
+                            <td scope="row">1</td>
+                            <td>Olivia</td>
+                            <td>solivia@email.com</td>
+                            <td>
+                                <p id="oliviaBankBalance">6000</p>
+                            </td>
+                        </tr>
+                        <tr class="table-danger">
+                            <td scope="row">2</td>
+                            <td>Ethan</td>
+                            <td>ethan@email.com</td>
+                            <td>
+                                <p id="ethanBankBalance">120000</p>
+                            </td>
+                        </tr>
+                        <tr class="table-light">
+                            <td scope="row">3</td>
+                            <td>Maya</td>
+                            <td>maya@email.com</td>
+                            <td>
+                                <p id="mayaBankBalance">100000</p>
+                            </td>
+                        </tr>
+                        <tr class="table-danger">
+                            <td scope="row">4</td>
+                            <td>Liam</td>
+                            <td>liam@email.com</td>
+                            <td>
+                                <p id="liamBankBalance">5500</p>
+                            </td>
+                        </tr>
+                        <tr class="table-light">
+                            <td scope="row">5</td>
+                            <td>Sophia</td>
+                            <td>sophia@email.com</td>
+                            <td>
+                                <p id="sophiaBankBalance">9000</p>
+                            </td>
+                        </tr>
+                        <tr class="table-danger">
+                            <td scope="row">6</td>
+                            <td>Caleb</td>
+                            <td>caleb@email.com</td>
+                            <td>
+                                <p id="calebBankBalance">15000</p>
+                            </td>
+                        </tr>
+                        <tr class="table-light">
+                            <td>7</td>
+                            <td>Ava</td>
+                            <td>ava@email.com</td>
+                            <td>
+                                <p id="avaBankBalance">7000</p>
+                            </td>
+                        </tr>
+                        <tr class="table-danger">
+                            <td scope="row">8</td>
+                            <td>Lucas</td>
+                            <td>lucas@email.com</td>
+                            <td>
+                                <p id="lucasBankBalance">9200</p>
+                            </td>
+                        </tr>
+                        <tr class="table-light">
+                            <td scope="row">9</td>
+                            <td>Isabella</td>
+                            <td>isabella@email.com</td>
+                            <td>
+                                <p id="isabellaBankBalance">8250</p>
+                            </td>
+                        </tr>
+                        <tr class="table-danger">
+                            <td scope="row">10</td>
+                            <td>Jackson</td>
+                            <td>sjackson@email.com</td>
+                            <td>
+                                <p id="jacksonBankBalance">130000</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
